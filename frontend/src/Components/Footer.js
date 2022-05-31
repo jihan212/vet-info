@@ -3,18 +3,18 @@ import React from 'react'
 const Footer = () => {
   return (
     <footer className='bg-indigo-200'>
-      <div class='max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:px-8 bg-indigo-200'>
-        <div class='grid grid-cols-1 gap-8 lg:grid-cols-3 bg-indigo-200'>
-          <div className='bg-indigo-200'>
-            <p class='max-w-xs mt-4 text-sm text-gray-600 bg-indigo-200'>
+      <div class='max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:px-8 '>
+        <div class='grid grid-cols-1 gap-8 lg:grid-cols-3 '>
+          <div>
+            <p class='max-w-xs mt-4 text-sm text-gray-600 '>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas,
               accusantium.
             </p>
-            <div class='flex mt-8 space-x-6 text-gray-600 bg-indigo-200'>
+            <div class='flex mt-8 space-x-6 text-gray-600 '>
               <a class='hover:opacity-75' href target='_blank' rel='noreferrer'>
                 <span class='sr-only'> Facebook </span>
                 <svg
-                  class='w-6 h-6 bg-indigo-200'
+                  class='w-6 h-6 '
                   fill='currentColor'
                   viewBox='0 0 24 24'
                   aria-hidden='true'
@@ -29,7 +29,7 @@ const Footer = () => {
               <a class='hover:opacity-75' href target='_blank' rel='noreferrer'>
                 <span class='sr-only'> Instagram </span>
                 <svg
-                  class='w-6 h-6 bg-indigo-200'
+                  class='w-6 h-6 '
                   fill='currentColor'
                   viewBox='0 0 24 24'
                   aria-hidden='true'
@@ -44,7 +44,7 @@ const Footer = () => {
               <a class='hover:opacity-75' href target='_blank' rel='noreferrer'>
                 <span class='sr-only'> Twitter </span>
                 <svg
-                  class='w-6 h-6 bg-indigo-200'
+                  class='w-6 h-6 '
                   fill='currentColor'
                   viewBox='0 0 24 24'
                   aria-hidden='true'
@@ -55,7 +55,7 @@ const Footer = () => {
               <a class='hover:opacity-75' href target='_blank' rel='noreferrer'>
                 <span class='sr-only'> GitHub </span>
                 <svg
-                  class='w-6 h-6 bg-indigo-200'
+                  class='w-6 h-6 '
                   fill='currentColor'
                   viewBox='0 0 24 24'
                   aria-hidden='true'
@@ -70,7 +70,7 @@ const Footer = () => {
               <a class='hover:opacity-75' href target='_blank' rel='noreferrer'>
                 <span class='sr-only'> Dribbble </span>
                 <svg
-                  class='w-6 h-6 bg-indigo-200'
+                  class='w-6 h-6 '
                   fill='currentColor'
                   viewBox='0 0 24 24'
                   aria-hidden='true'
@@ -84,86 +84,86 @@ const Footer = () => {
               </a>
             </div>
           </div>
-          <div class='grid grid-cols-1 gap-8 lg:col-span-2 sm:grid-cols-2 lg:grid-cols-4 bg-indigo-200'>
-            <div className='bg-indigo-200'>
-              <p class='font-medium bg-indigo-200'>Company</p>
-              <nav class='flex flex-col mt-4 space-y-2 text-sm text-gray-500 bg-indigo-200'>
-                <a class='hover:opacity-75 bg-indigo-200' href>
+          <div class='grid grid-cols-1 gap-8 lg:col-span-2 sm:grid-cols-2 lg:grid-cols-4 '>
+            <div>
+              <p class='font-medium '>Company</p>
+              <nav class='flex flex-col mt-4 space-y-2 text-sm text-gray-500 '>
+                <a class='hover:opacity-75 ' href>
                   {' '}
                   About{' '}
                 </a>
-                <a class='hover:opacity-75 bg-indigo-200' href>
+                <a class='hover:opacity-75 ' href>
                   {' '}
                   Meet the Team{' '}
                 </a>
-                <a class='hover:opacity-75 bg-indigo-200' href>
+                <a class='hover:opacity-75 ' href>
                   {' '}
                   History{' '}
                 </a>
-                <a class='hover:opacity-75 bg-indigo-200' href>
+                <a class='hover:opacity-75 ' href>
                   {' '}
                   Careers{' '}
                 </a>
               </nav>
             </div>
             <div>
-              <p class='font-medium bg-indigo-200'>Services</p>
-              <nav class='flex flex-col mt-4 space-y-2 text-sm text-gray-500 bg-indigo-200'>
-                <a class='hover:opacity-75 bg-indigo-200' href>
+              <p class='font-medium '>Services</p>
+              <nav class='flex flex-col mt-4 space-y-2 text-sm text-gray-500 '>
+                <a class='hover:opacity-75 ' href>
                   {' '}
                   1on1 Coaching{' '}
                 </a>
-                <a class='hover:opacity-75 bg-indigo-200' href>
+                <a class='hover:opacity-75 ' href>
                   {' '}
                   Company Review{' '}
                 </a>
-                <a class='hover:opacity-75 bg-indigo-200' href>
+                <a class='hover:opacity-75 ' href>
                   {' '}
                   Accounts Review{' '}
                 </a>
-                <a class='hover:opacity-75 bg-indigo-200' href>
+                <a class='hover:opacity-75 ' href>
                   {' '}
                   HR Consulting{' '}
                 </a>
-                <a class='hover:opacity-75 bg-indigo-200' href>
+                <a class='hover:opacity-75 ' href>
                   {' '}
                   SEO Optimisation{' '}
                 </a>
               </nav>
             </div>
             <div>
-              <p class='font-medium bg-indigo-200'>Helpful Links</p>
-              <nav class='flex flex-col mt-4 space-y-2 text-sm text-gray-500 bg-indigo-200'>
-                <a class='hover:opacity-75 bg-indigo-200' href>
+              <p class='font-medium '>Helpful Links</p>
+              <nav class='flex flex-col mt-4 space-y-2 text-sm text-gray-500 '>
+                <a class='hover:opacity-75 ' href>
                   {' '}
                   Contact{' '}
                 </a>
-                <a class='hover:opacity-75 bg-indigo-200' href>
+                <a class='hover:opacity-75 ' href>
                   {' '}
                   FAQs{' '}
                 </a>
-                <a class='hover:opacity-75 bg-indigo-200' href>
+                <a class='hover:opacity-75 ' href>
                   {' '}
                   Live Chat{' '}
                 </a>
               </nav>
             </div>
             <div>
-              <p class='font-medium bg-indigo-200'>Legal</p>
-              <nav class='flex flex-col mt-4 space-y-2 text-sm text-gray-500 bg-indigo-200'>
-                <a class='hover:opacity-75 bg-indigo-200' href>
+              <p class='font-medium '>Legal</p>
+              <nav class='flex flex-col mt-4 space-y-2 text-sm text-gray-500 '>
+                <a class='hover:opacity-75 ' href>
                   {' '}
                   Privacy Policy{' '}
                 </a>
-                <a class='hover:opacity-75 bg-indigo-200' href>
+                <a class='hover:opacity-75 ' href>
                   {' '}
                   Terms &amp; Conditions{' '}
                 </a>
-                <a class='hover:opacity-75 bg-indigo-200' href>
+                <a class='hover:opacity-75 ' href>
                   {' '}
                   Returns Policy{' '}
                 </a>
-                <a class='hover:opacity-75 bg-indigo-200' href>
+                <a class='hover:opacity-75 ' href>
                   {' '}
                   Accessibility{' '}
                 </a>
@@ -171,7 +171,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <p class='mt-8 text-xs text-gray-800 bg-indigo-200'>
+        <p class='mt-8 text-xs text-gray-800 '>
           © 2022 Comany Name
         </p>
       </div>

@@ -16,7 +16,7 @@ const Homescreen = () => {
         <h1 className='text-4xl font-semibold subpixel-antialiased text-center underline decoration-3 text-slate-900 p-5 m-5'>
           Available Vets In Your Area
         </h1>
-        <div className='grid grid-cols-3 gap-4 p-8 m-8 flex justify-around'>
+        <div className='grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 p-8 m-8'>
           {vets.map((vet) => (
             <VetCard vet={vet}></VetCard>
           ))}
