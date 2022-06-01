@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import fakedata from '../fakeData/fakedata.json'
 import Header from '../Components/Header'
+import Intro from '../Components/Intro'
 import Input from '../Components/Input'
 import VetCard from '../Components/Vetcard'
 import FAQ from '../Components/FAQ'
@@ -11,9 +12,10 @@ const Homescreen = () => {
   return (
     <>
       <Header />
+      <Intro />
       <Input />
       <section>
-        <h1 className='text-4xl font-semibold subpixel-antialiased text-center underline decoration-3 text-slate-900 p-5 m-5'>
+        <h1 className='font-extrabold text-transparent text-6xl bg-clip-text bg-gradient-to-r from-green-400 to-blue-600 text-center header-font p-5 m-5'>
           Available Vets In Your Area
         </h1>
         <div className='grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 p-8 m-8'>

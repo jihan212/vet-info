@@ -4,33 +4,47 @@ import { Link } from 'react-router-dom'
 
 const Header = () => {
   return (
-    <nav class='font-sans flex flex-col text-center content-center sm:flex-row sm:text-left sm:justify-between py-2 px-6 shadow sm:items-baseline w-full'>
-      <div className='mb-2 sm:mb-0 flex flex-row'>
-        <Link to='/'>
-          <img className='w-2/6' src={logo} alt='vetInfo' />
-        </Link>
-      </div>
-      <div className='sm:mb-0 self-center'>
-        <Link
-          to='/about'
-          class='no-underline text-black hover:text-blue-dark mx-5 px-5 text-3xl font-semibold'
-        >
-          About
-        </Link>
-        <Link
-          to='/'
-          class='no-underline text-black hover:text-blue-dark mx-5 px-5 text-3xl font-semibold'
-        >
-          FAQ
-        </Link>
-        <Link
-          to='/'
-          class='no-underline text-black hover:text-blue-dark mx-5 px-5 text-3xl font-semibold'
-        >
-          Contact
-        </Link>
-      </div>
-    </nav>
+    <>
+      <nav class='w-full border-b'>
+        <div class='py-5 md:py-0 container mx-auto px-6 flex items-center justify-between'>
+          <div aria-label='Home.logo' role='img'>
+            <Link to='/'>
+              <img className='w-2/6' src={logo} alt='vetInfo' />
+            </Link>
+          </div>
+          <div>
+            <div id='menu' class='md:block lg:block hidden'>
+              <ul class='flex text-3xl md:text-base items-center py-10 md:flex flex-col md:flex-row justify-center fixed md:relative top-0 bottom-0 left-0 right-0 bg-white md:bg-transparent z-20'>
+                <li class='text-gray-700 hover:text-gray-900 cursor-pointer text-base lg:text-lg pt-10 md:pt-0'>
+                  <Link
+                    to='/about'
+                    class='no-underline text-black hover:text-blue-dark mx-5 px-5 text-3xl font-semibold'
+                  >
+                    About
+                  </Link>
+                </li>
+                <li class='text-gray-700 hover:text-gray-900 cursor-pointer text-base lg:text-lg pt-10 md:pt-0 md:ml-5 lg:ml-10'>
+                  <Link
+                    to='/'
+                    class='no-underline text-black hover:text-blue-dark mx-5 px-5 text-3xl font-semibold'
+                  >
+                    FAQ
+                  </Link>
+                </li>
+                <li class='text-gray-700 hover:text-gray-900 cursor-pointer text-base lg:text-lg pt-10 md:pt-0 md:ml-5 lg:ml-10'>
+                  <Link
+                    to='/'
+                    class='no-underline text-black hover:text-blue-dark mx-5 px-5 text-3xl font-semibold'
+                  >
+                    Contact
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </>
   )
 }
 
