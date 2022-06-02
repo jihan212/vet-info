@@ -25,18 +25,30 @@ const Header = () => {
                 </li>
                 <li class='text-gray-700 hover:text-gray-900 cursor-pointer text-base lg:text-lg pt-10 md:pt-0 md:ml-5 lg:ml-10'>
                   <Link
-                    to='/'
+                    to='/rescue'
                     class='no-underline text-black hover:text-blue-dark mx-5 px-5 text-3xl font-semibold'
                   >
-                    FAQ
+                    Rescue
                   </Link>
                 </li>
                 <li class='text-gray-700 hover:text-gray-900 cursor-pointer text-base lg:text-lg pt-10 md:pt-0 md:ml-5 lg:ml-10'>
                   <Link
-                    to='/'
+                    to='/foster'
                     class='no-underline text-black hover:text-blue-dark mx-5 px-5 text-3xl font-semibold'
                   >
-                    Contact
+                    Foster
+                  </Link>
+                  <Link
+                    to='/carrier'
+                    class='no-underline text-black hover:text-blue-dark mx-5 px-5 text-3xl font-semibold'
+                  >
+                    Pet Carrier
+                  </Link>
+                  <Link
+                    to='/blogs'
+                    class='no-underline text-black hover:text-blue-dark mx-5 px-5 text-3xl font-semibold'
+                  >
+                    Blog
                   </Link>
                 </li>
               </ul>
