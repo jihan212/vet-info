@@ -4,7 +4,7 @@ import { BiWorld } from 'react-icons/bi'
 
 const Footer = () => {
   return (
-    <footer className='bg-slate-200'>
+    <footer className='bg-sky-100'>
       <div class='max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:px-8 '>
         <div class='grid grid-cols-1 gap-8 lg:grid-cols-3 '>
           <div class='flex mt-8 space-x-6 text-gray-600 '>
