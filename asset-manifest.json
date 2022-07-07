@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.57639083.css",
-    "main.js": "/static/js/main.71011b22.js",
-    "static/media/logo.png": "/static/media/logo.51c090e0052574496dd1.png",
-    "index.html": "/index.html",
-    "main.57639083.css.map": "/static/css/main.57639083.css.map",
-    "main.71011b22.js.map": "/static/js/main.71011b22.js.map"
+    "main.css": "/vet-info/static/css/main.57639083.css",
+    "main.js": "/vet-info/static/js/main.7fd27581.js",
+    "static/media/logo.png": "/vet-info/static/media/logo.51c090e0052574496dd1.png",
+    "index.html": "/vet-info/index.html",
+    "main.57639083.css.map": "/vet-info/static/css/main.57639083.css.map",
+    "main.7fd27581.js.map": "/vet-info/static/js/main.7fd27581.js.map"
   },
   "entrypoints": [
     "static/css/main.57639083.css",
-    "static/js/main.71011b22.js"
+    "static/js/main.7fd27581.js"
   ]
 }
