@@ -1,5 +1,4 @@
-import React, { useState } from 'react'
-import fakedata from '../fakeData/fakedata.json'
+import React, { useState, useEffect } from 'react'
 import Header from '../Components/Header'
 import Intro from '../Components/Intro'
 import Input from '../Components/Input'
@@ -8,7 +7,13 @@ import FAQ from '../Components/FAQ'
 import Footer from '../Components/Footer'
 
 const Homescreen = () => {
-  const [vets, setVets] = useState(fakedata)
+  const [vets, setVets] = useState([])
+
+  useEffect(() => {
+    fetch('http://localhost:5000/users')
+      .then((res) => res.json())
+      .then((data) => setVets(data))
+  })
   return (
     <>
       <Header />

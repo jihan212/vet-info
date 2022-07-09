@@ -14,7 +14,7 @@ function App() {
           <Route path='/details' element={<Vetdetailscreen />} />
           <Route path='/about' element={<AboutScreen />} />
           <Route path='/API' element={<APIscreen />} />
-          <Route path='/Vetadd' element={<VetaddScreen />} />
+          <Route path='/admin/vetadd' element={<VetaddScreen />} />
         </Routes>
       </Router>
     </>
