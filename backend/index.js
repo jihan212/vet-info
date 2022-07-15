@@ -1,48 +1,79 @@
-const http = require('http')
-const app = require('./app')
+const express = require('express')
+const app = express()
+const { MongoClient, ServerApiVersion } = require('mongodb')
+const ObjectID = require('mongodb').ObjectID
+const cors = require('cors')
+const bodyParser = require('body-parser')
+require('dotenv').config()
+const port = process.env.PORT || 5000
 
+app.use(cors())
+app.use(bodyParser.json())
 
-const normalizePort = (val) => {
-  const port = parseInt(val, 10)
-
-  if (isNaN(port)) {
-    return val
-  }
-  if (port >= 0) {
-    return port
-  }
-  return false
-}
-const port = normalizePort(process.env.PORT || '5000')
-app.set('port', port)
-
-const errorHandler = (error) => {
-  if (error.syscall !== 'listen') {
-    throw error
-  }
-  const address = server.address()
-  const bind = typeof address === 'string' ? 'pipe ' + address : 'port: ' + port
-  switch (error.code) {
-    case 'EACCES':
-      console.error(bind + ' requires elevated privileges.')
-      process.exit(1)
-      break
-    case 'EADDRINUSE':
-      console.error(bind + ' is already in use.')
-      process.exit(1)
-      break
-    default:
-      throw error
-  }
-}
-
-const server = http.createServer(app)
-
-server.on('error', errorHandler)
-server.on('listening', () => {
-  const address = server.address()
-  const bind = typeof address === 'string' ? 'pipe ' + address : 'port ' + port
-  console.log('Listening on ' + bind)
+app.get('/', (req, res) => {
+  res.send('This is server site of Green Point app')
 })
 
-server.listen(port)
+//--------Mongodb--------
+const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.frpwhu2.mongodb.net/?retryWrites=true&w=majority`
+const client = new MongoClient(uri, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  serverApi: ServerApiVersion.v1,
+})
+client.connect((err) => {
+  const collection = client.db('petinfo').collection('vets')
+  // perform actions on the collection object
+  console.log('Hitting the database')
+  console.log(err);
+
+  const vet = [
+    {
+      name: 'Patricia Lebsack',
+      email: 'Julianne.OConner@kory.org',
+      contact: '01*********',
+      address: {
+        division: 'Chittagong',
+        district: 'Feni',
+        upazila: 'Feni sadar',
+        street: 'Hoeger Mall',
+      },
+      education: {
+        bachelor: 'Chittagong',
+        masters: 'Feni',
+        degree: 'Feni sadar',
+        diploma: 'Hoeger Mall',
+      },
+    },
+    {
+      name: 'Patricia Lebsack',
+      email: 'Julianne.OConner@kory.org',
+      contact: '01*********',
+      address: {
+        division: 'Chittagong',
+        district: 'Feni',
+        upazila: 'Feni sadar',
+        street: 'Hoeger Mall',
+      },
+      education: {
+        bachelor: 'Chittagong',
+        masters: 'Feni',
+        degree: 'Feni sadar',
+        diploma: 'Hoeger Mall',
+      },
+    },
+  ]
+
+  collection.insertMany(vet)
+    .then(() => {
+                console.log('Insert succes');
+              })
+
+
+
+  // client.close()
+})
+
+app.listen(port, () => {
+  console.log(`Example app listening at http://localhost:${port}`)
+})
