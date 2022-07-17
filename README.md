@@ -10,11 +10,11 @@
 
 ## Vet details interface 
 
-![Homepage](https://github.com/jihan212/vet-info/blob/main/frontend/src/Images/vet-details.png)
+![Vetdetailspage](https://github.com/jihan212/vet-info/blob/main/frontend/src/Images/vet-details.png)
 
 ## Admin interface for adding vet details 
 
-![Homepage](https://github.com/jihan212/vet-info/blob/main/frontend/src/Images/vetaddscreen.png)
+![vetaddpage](https://github.com/jihan212/vet-info/blob/main/frontend/src/Images/vetaddscreen.png)
 
 
 
