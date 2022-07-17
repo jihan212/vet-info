@@ -10,7 +10,7 @@ const Homescreen = () => {
   const [vets, setVets] = useState([])
 
   useEffect(() => {
-    fetch('http://localhost:5000/users')
+    fetch('http://localhost:5000/vets')
       .then((res) => res.json())
       .then((data) => setVets(data))
   })

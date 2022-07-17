@@ -21,7 +21,7 @@ const Vetcard = (props) => {
           />
           <h5 class='mb-1 text-xl text-2xl text-gray-900'>{props.vet.name}</h5>
           <p class='flex mt-4 space-x-3 lg:mt-6 font-medium'>
-            Bachelor of Veterinary Science (BVSc)
+            {props.vet.education.bachelor}
           </p>
           <div class='flex mt-4 space-x-3 lg:mt-6'>
             <Link
@@ -33,13 +33,13 @@ const Vetcard = (props) => {
           </div>
           <div class='flex mt-4 space-x-3 lg:mt-6'>
             <a
-              href={props.vet.whatsapp}
+              href={props.vet.contact}
               class='p-4 w-2.5 font-medium cursor-pointer text-blue-900'
             >
               <BsWhatsapp size={25} />
             </a>
             <a
-              href={props.vet.telegram}
+              href={props.vet.contact}
               class='p-4 w-2.5 font-medium cursor-pointer text-blue-900'
             >
               <BsTelegram size={25} />
