@@ -23,53 +23,15 @@ const client = new MongoClient(uri, {
 })
 client.connect((err) => {
   const collection = client.db('petinfo').collection('vets')
-  // perform actions on the collection object
+
   console.log('Hitting the database')
-  console.log(err);
 
-  const vet = [
-    {
-      name: 'Patricia Lebsack',
-      email: 'Julianne.OConner@kory.org',
-      contact: '01*********',
-      address: {
-        division: 'Chittagong',
-        district: 'Feni',
-        upazila: 'Feni sadar',
-        street: 'Hoeger Mall',
-      },
-      education: {
-        bachelor: 'Chittagong',
-        masters: 'Feni',
-        degree: 'Feni sadar',
-        diploma: 'Hoeger Mall',
-      },
-    },
-    {
-      name: 'Patricia Lebsack',
-      email: 'Julianne.OConner@kory.org',
-      contact: '01*********',
-      address: {
-        division: 'Chittagong',
-        district: 'Feni',
-        upazila: 'Feni sadar',
-        street: 'Hoeger Mall',
-      },
-      education: {
-        bachelor: 'Chittagong',
-        masters: 'Feni',
-        degree: 'Feni sadar',
-        diploma: 'Hoeger Mall',
-      },
-    },
-  ]
+  // POST API
 
-  collection.insertMany(vet)
-    .then(() => {
-                console.log('Insert succes');
-              })
-
-
+  app.post('/vets', async (req, res) => {
+    console.log('Hitting the post', req.body)
+    res.send('Hit the post')
+  })
 
   // client.close()
 })
