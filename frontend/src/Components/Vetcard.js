@@ -15,14 +15,20 @@ const Vetcard = (props) => {
         <div class='flex justify-end px-4 pt-4'></div>
         <div class='flex flex-col items-center pb-10'>
           <img
-            class='mb-3 w-30 h-30 rounded-full shadow-lg'
+            class='mb-3 w-20 h-20 rounded-full shadow-lg'
             src={props.vet.img}
             alt=''
           />
           <h5 class='mb-1 text-xl text-2xl text-gray-900'>{props.vet.name}</h5>
           <p class='flex mt-4 space-x-3 lg:mt-6 font-medium'>
-            {props.vet.education.bachelor}
+            Division: {props.vet.address.division} <br />
+            District: {props.vet.address.district} <br />
+            Upazila: {props.vet.address.upazila}
           </p>
+          {/* <p class='flex mt-4 space-x-3 lg:mt-6 font-medium'>
+            Bachelor: {props.vet.education.bachelor} <br />
+            Masters: {props.vet.education.masters} <br />
+          </p> */}
           <div class='flex mt-4 space-x-3 lg:mt-6'>
             <Link
               to='/details'
@@ -33,13 +39,13 @@ const Vetcard = (props) => {
           </div>
           <div class='flex mt-4 space-x-3 lg:mt-6'>
             <a
-              href={props.vet.contact}
+              href={props.vet.social.whatsapp}
               class='p-4 w-2.5 font-medium cursor-pointer text-blue-900'
             >
               <BsWhatsapp size={25} />
             </a>
             <a
-              href={props.vet.contact}
+              href={props.vet.social.telegram}
               class='p-4 w-2.5 font-medium cursor-pointer text-blue-900'
             >
               <BsTelegram size={25} />
@@ -51,7 +57,7 @@ const Vetcard = (props) => {
               <BsTelephoneFill size={25} />
             </a>
             <a
-              href={props.vet.facebook}
+              href={props.vet.social.facebook}
               class='p-4 w-2.5 font-medium cursor-pointer text-blue-900'
             >
               <BsFacebook size={25} />

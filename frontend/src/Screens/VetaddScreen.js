@@ -14,6 +14,9 @@ const VetaddScreen = () => {
   const degreeRef = useRef()
   const diplomaRef = useRef()
   const imgRef = useRef()
+  const facebookRef = useRef()
+  const telegramRef = useRef()
+  const whatsappRef = useRef()
 
   const handleAddUser = (e) => {
     const name = nameRef.current.value
@@ -28,6 +31,9 @@ const VetaddScreen = () => {
     const degree = degreeRef.current.value
     const diploma = diplomaRef.current.value
     const img = imgRef.current.value
+    const facebook = facebookRef.current.value
+    const telegram = telegramRef.current.value
+    const whatsapp = whatsappRef.current.value
 
     const newVet = {
       name,
@@ -41,7 +47,10 @@ const VetaddScreen = () => {
       msc,
       degree,
       diploma,
-      img
+      img,
+      facebook,
+      telegram,
+      whatsapp,
     }
 
     fetch('http://localhost:5000/vets', {
@@ -245,6 +254,57 @@ const VetaddScreen = () => {
             />
           </div>
         </div>
+
+        <div className='flex flex-wrap -mx-3 mb-2'>
+          <div className='w-full md:w-1/4 px-3 mb-6 md:mb-0'>
+            <label
+              className='block uppercase tracking-wide text-cyan-900 text-xs font-bold mb-2'
+              htmlFor='grid-facebook'
+            >
+              Facebook
+            </label>
+            <div className='relative'>
+              <input
+                className='appearance-none block w-full bg-cyan-100 text-cyan-900 border border-cyan-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-cyan-500'
+                id='grid-facebook'
+                type='text'
+                placeholder='Facebook'
+                ref={facebookRef}
+              />
+            </div>
+          </div>
+          <div className='w-full md:w-1/4 px-3 mb-6 md:mb-0'>
+            <label
+              className='block uppercase tracking-wide text-cyan-900 text-xs font-bold mb-2'
+              htmlFor='grid-telegram'
+            >
+              Telegram
+            </label>
+            <input
+              className='appearance-none block w-full bg-cyan-100 text-cyan-900 border border-cyan-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-cyan-500'
+              id='grid-telegram'
+              type='text'
+              placeholder='Telegram'
+              ref={telegramRef}
+            />
+          </div>
+          <div className='w-full md:w-1/4 px-3 mb-6 md:mb-0'>
+            <label
+              className='block uppercase tracking-wide text-cyan-900 text-xs font-bold mb-2'
+              htmlFor='grid-whatsapp'
+            >
+              Whatsapp
+            </label>
+            <input
+              className='appearance-none block w-full bg-cyan-100 text-cyan-900 border border-cyan-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-cyan-500'
+              id='grid-whatsapp'
+              type='text'
+              placeholder='whatsapp'
+              ref={whatsappRef}
+            />
+          </div>
+        </div>
+
         <div>
           <label
             className='block uppercase tracking-wide text-cyan-900 text-xs font-bold mb-2'

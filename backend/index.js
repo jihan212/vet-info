@@ -39,35 +39,100 @@ async function run() {
 
     // POST API
 
-    app.post('/vets', async (req, res) => {
-      const newVet = req.body
+    const data = [
+      {
+        name: 'Syed Ahmad',
+        email: 'syad@example.com',
+        contact: '01*********',
+        img: 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png',
+        online: false,
+        address: {
+          division: 'Dhaka',
+          district: 'Tangail',
+          upazila: 'Tangailsadar',
+          street: 'Main road',
+        },
+        education: {
+          bachelor: 'Bachelor of Veterinary Science ',
+          masters: 'Master of Veterinary Science ',
+          degree: 'None',
+          diploma: 'none',
+        },
+        social: {
+          facebook: 'https://facebook.com/',
+          whatsapp: '01********',
+          telegram: '01********',
+        },
+      },
+      {
+        name: 'Habib Ullah',
+        email: 'habibullah@example.com',
+        contact: '01*********',
+        img: 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png',
+        online: false,
+        address: {
+          division: 'Dhaka',
+          district: 'Tangail',
+          upazila: 'Mirzapur',
+          street: 'Main road',
+        },
+        education: {
+          bachelor: 'Bachelor of Veterinary Science ',
+          masters: 'Master of Veterinary Science ',
+          degree: 'None',
+          diploma: 'none',
+        },
+        social: {
+          facebook: 'https://facebook.com/',
+          whatsapp: '01********',
+          telegram: '01********',
+        },
+      },
+      {
+        name: 'Sabbir Rahman',
+        email: 'srahman@example.com',
+        contact: '01*********',
+        img: 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png',
+        online: false,
+        address: {
+          division: 'Dhaka',
+          district: 'Tangail',
+          upazila: 'Gopalpur',
+          street: 'Main road',
+        },
+        education: {
+          bachelor: 'Bachelor of Veterinary Science ',
+          masters: 'Master of Veterinary Science ',
+          degree: 'None',
+          diploma: 'none',
+        },
+        social: {
+          facebook: 'https://facebook.com/',
+          whatsapp: '01********',
+          telegram: '01********',
+        },
+      },
+    ]
 
-      const result = await vetsCollection.insertOne(newVet)
+    const options = { ordered: true }
 
-      console.log('got new vet from post', req.body)
-      console.log(`A document was inserted with the _id: ${result.insertedId}`)
-      res.json(result)
-    })
+    const result = await vetsCollection.insertMany(ata, options)
+    console.log(` ${result.insertedCount} documents were inserted`)
+
+    // app.post('/vets', async (req, res) => {
+    //   const newVet = req.body
+
+    //   const result = await vetsCollection.insertOne(newVet)
+
+    //   console.log('got new vet from post', req.body)
+    //   console.log(`A document was inserted with the _id: ${result.insertedId}`)
+    //   res.json(result)
+    // })
   } finally {
     // await client.close()
   }
 }
 run().catch(console.dir)
-
-// client.connect((err) => {
-//   const collection = client.db('petinfo').collection('vets')
-
-//   console.log('Hitting the database')
-
-//   // POST API
-
-//   app.post('/vets', async (req, res) => {
-//     console.log('Hitting the post', req.body)
-//     res.send('Hit the post')
-//   })
-
-//   // client.close()
-// })
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
