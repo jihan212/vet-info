@@ -11,7 +11,7 @@ function App() {
       <Router>
         <Routes>
           <Route exact path='/' element={<Homescreen />} />
-          <Route path='/details' element={<Vetdetailscreen />} />
+          <Route path='/details/:vetId' element={<Vetdetailscreen />} />
           <Route path='/about' element={<AboutScreen />} />
           <Route path='/API' element={<APIscreen />} />
           <Route path='/admin/vetadd' element={<VetaddScreen />} />

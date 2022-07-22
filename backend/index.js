@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const { MongoClient } = require('mongodb')
+const ObjectId = require('mongodb').ObjectID
 const cors = require('cors')
 const bodyParser = require('body-parser')
 require('dotenv').config()
@@ -37,87 +38,94 @@ async function run() {
       res.send(vets)
     })
 
+    app.get('/vets/:id', async (req, res) => {
+      const id = req.params.id
+      const query = { _id: ObjectId(id) }
+      const vet = await vetsCollection.findOne(query)
+      res.send(vet)
+    })
+
     // POST API
 
-    const data = [
-      {
-        name: 'Syed Ahmad',
-        email: 'syad@example.com',
-        contact: '01*********',
-        img: 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png',
-        online: false,
-        address: {
-          division: 'Dhaka',
-          district: 'Tangail',
-          upazila: 'Tangailsadar',
-          street: 'Main road',
-        },
-        education: {
-          bachelor: 'Bachelor of Veterinary Science ',
-          masters: 'Master of Veterinary Science ',
-          degree: 'None',
-          diploma: 'none',
-        },
-        social: {
-          facebook: 'https://facebook.com/',
-          whatsapp: '01********',
-          telegram: '01********',
-        },
-      },
-      {
-        name: 'Habib Ullah',
-        email: 'habibullah@example.com',
-        contact: '01*********',
-        img: 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png',
-        online: false,
-        address: {
-          division: 'Dhaka',
-          district: 'Tangail',
-          upazila: 'Mirzapur',
-          street: 'Main road',
-        },
-        education: {
-          bachelor: 'Bachelor of Veterinary Science ',
-          masters: 'Master of Veterinary Science ',
-          degree: 'None',
-          diploma: 'none',
-        },
-        social: {
-          facebook: 'https://facebook.com/',
-          whatsapp: '01********',
-          telegram: '01********',
-        },
-      },
-      {
-        name: 'Sabbir Rahman',
-        email: 'srahman@example.com',
-        contact: '01*********',
-        img: 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png',
-        online: false,
-        address: {
-          division: 'Dhaka',
-          district: 'Tangail',
-          upazila: 'Gopalpur',
-          street: 'Main road',
-        },
-        education: {
-          bachelor: 'Bachelor of Veterinary Science ',
-          masters: 'Master of Veterinary Science ',
-          degree: 'None',
-          diploma: 'none',
-        },
-        social: {
-          facebook: 'https://facebook.com/',
-          whatsapp: '01********',
-          telegram: '01********',
-        },
-      },
-    ]
+    // const data = [
+    //   {
+    //     name: 'Syed Ahmad',
+    //     email: 'syad@example.com',
+    //     contact: '01*********',
+    //     img: 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png',
+    //     online: false,
+    //     address: {
+    //       division: 'Dhaka',
+    //       district: 'Tangail',
+    //       upazila: 'Tangailsadar',
+    //       street: 'Main road',
+    //     },
+    //     education: {
+    //       bachelor: 'Bachelor of Veterinary Science ',
+    //       masters: 'Master of Veterinary Science ',
+    //       degree: 'None',
+    //       diploma: 'none',
+    //     },
+    //     social: {
+    //       facebook: 'https://facebook.com/',
+    //       whatsapp: '01********',
+    //       telegram: '01********',
+    //     },
+    //   },
+    //   {
+    //     name: 'Habib Ullah',
+    //     email: 'habibullah@example.com',
+    //     contact: '01*********',
+    //     img: 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png',
+    //     online: false,
+    //     address: {
+    //       division: 'Dhaka',
+    //       district: 'Tangail',
+    //       upazila: 'Mirzapur',
+    //       street: 'Main road',
+    //     },
+    //     education: {
+    //       bachelor: 'Bachelor of Veterinary Science ',
+    //       masters: 'Master of Veterinary Science ',
+    //       degree: 'None',
+    //       diploma: 'none',
+    //     },
+    //     social: {
+    //       facebook: 'https://facebook.com/',
+    //       whatsapp: '01********',
+    //       telegram: '01********',
+    //     },
+    //   },
+    //   {
+    //     name: 'Sabbir Rahman',
+    //     email: 'srahman@example.com',
+    //     contact: '01*********',
+    //     img: 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png',
+    //     online: false,
+    //     address: {
+    //       division: 'Dhaka',
+    //       district: 'Tangail',
+    //       upazila: 'Gopalpur',
+    //       street: 'Main road',
+    //     },
+    //     education: {
+    //       bachelor: 'Bachelor of Veterinary Science ',
+    //       masters: 'Master of Veterinary Science ',
+    //       degree: 'None',
+    //       diploma: 'none',
+    //     },
+    //     social: {
+    //       facebook: 'https://facebook.com/',
+    //       whatsapp: '01********',
+    //       telegram: '01********',
+    //     },
+    //   },
+    // ]
 
-    const options = { ordered: true }
+    // const options = { ordered: true }
 
-    const result = await vetsCollection.insertMany(ata, options)
-    console.log(` ${result.insertedCount} documents were inserted`)
+    // const result = await vetsCollection.insertMany(ata, options)
+    // console.log(` ${result.insertedCount} documents were inserted`)
 
     // app.post('/vets', async (req, res) => {
     //   const newVet = req.body
